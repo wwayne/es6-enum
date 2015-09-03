@@ -1,22 +1,22 @@
 export function Enum() {
 
-	if (!(this instanceof Enum)) {
-		return new Enum(...Object.values(arguments));
-	}
+  if (!(this instanceof Enum)) {
+    return new Enum(...Object.values(arguments));
+  }
 
   let args = this.deepCopy(Array.prototype.slice.call(arguments))
   if (Object.prototype.toString.call(args) === "[object Object]") {
     args = Object.values(args);
   }
 
-	args.forEach((prams) => {
-		this[prams] = Symbol(prams);
-	})
+  args.forEach((prams) => {
+    this[prams] = Symbol(prams);
+  })
 
 }
 
 Enum.prototype = {
-	constructor: Enum,
+  constructor: Enum,
   deepCopy: function (target) {
 
     let result;

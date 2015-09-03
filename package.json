@@ -1,12 +1,12 @@
 {
   "name": "es6-enum",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "babel-node test/index.js | faucet"
   },
-  "author": "",
+  "author": "wwayne",
   "license": "MIT",
   "devDependencies": {
     "babel": "^5.8.23",
