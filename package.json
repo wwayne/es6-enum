@@ -1,10 +1,11 @@
 {
   "name": "es6-enum",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Enum type made by es6",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node test/index.js | faucet"
+    "test": "babel-node test/index.js | faucet",
+    "deploy": "babel ./lib/enum.js --out-file ./dist/index.js"
   },
   "author": "wwayne",
   "license": "MIT",
