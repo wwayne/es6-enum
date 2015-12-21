@@ -4,9 +4,6 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![Circle CI](https://circleci.com/gh/wwayne/es6-enum/tree/master.svg?style=svg)](https://circleci.com/gh/wwayne/es6-enum/tree/master)
 
-### Support
-To use es6-enum, if you are not using babel, you should make sure your Nodejs >= 4.0.0
-
 ### Installation
 
 ```sh
