@@ -1,6 +1,11 @@
-import test from 'tape'
-import Enum from '../index'
-import whatEver from '../index'
+/**
+ * Test env: node 4.2.1
+ */
+'use strict'
+
+const test = require('tape')
+const Enum = require('../dist')
+const whatEver = require('../dist')
 
 const ORIENTATION = Enum('NORTH', 'SOURTH', 'WEST', 'EAST');
 const ORIEN = Enum('NORTH', 'SOURTH', 'WEST', 'EAST');

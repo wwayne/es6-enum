@@ -1,19 +1,21 @@
-"use strict";
+'use strict';
 
 exports.__esModule = true;
 var _bind = Function.prototype.bind;
-exports.Enum = Enum;
-
 function Enum() {
   var _this = this;
 
   if (!(this instanceof Enum)) {
-    return new (_bind.apply(Enum, [null].concat(Object.values(arguments))))();
+    var _args = [];
+    for (var key in arguments) {
+      _args.push(arguments[key]);
+    }
+    return new (_bind.apply(Enum, [null].concat(_args)))();
   }
 
   var args = this.deepCopy(Array.prototype.slice.call(arguments));
-  if (Object.prototype.toString.call(args) === "[object Object]") {
-    args = Object.values(args);
+  if (Object.prototype.toString.call(args) === '[object Object]') {
+    args = this.valuesInObj(args);
   }
 
   args.forEach(function (prams) {
@@ -23,29 +25,23 @@ function Enum() {
 
 Enum.prototype = {
   constructor: Enum,
-  deepCopy: (function (_deepCopy) {
-    function deepCopy(_x) {
-      return _deepCopy.apply(this, arguments);
-    }
-
-    deepCopy.toString = function () {
-      return _deepCopy.toString();
-    };
-
-    return deepCopy;
-  })(function (target) {
-
+  deepCopy: function deepCopy(target) {
     var result = undefined;
     var type = Object.prototype.toString.call(target);
-
+    var getValue = function getValue(value) {
+      if (typeof value === 'object') {
+        return undefined.deepCopy(value);
+      }
+      return value;
+    };
     switch (type) {
-      case "[object Object]":
+      case '[object Object]':
         result = {};
         for (var key in target) {
           result[key] = getValue(target[key]);
         }
         break;
-      case "[object Array]":
+      case '[object Array]':
         result = [];
         for (var _iterator = target.entries(), _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
           var _ref;
@@ -68,16 +64,17 @@ Enum.prototype = {
       default:
         result = null;
     }
-
-    function getValue(value) {
-      if (typeof value === "object") {
-        return deepCopy(value);
-      }
-      return value;
-    }
-
     return result;
-  })
+  },
+  /* Untill Node 5.3.0, Object.values still not supported */
+  valuesInObj: function valuesInObj(object) {
+    var results = [];
+    for (var key in object) {
+      results.push(object[key]);
+    }
+    return results;
+  }
 };
 
-exports["default"] = Enum;
+exports['default'] = Enum;
+module.exports = exports['default'];

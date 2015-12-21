@@ -1,11 +1,12 @@
 {
   "name": "es6-enum",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Enum type made by es6",
   "main": "dist/index.js",
   "scripts": {
-    "test": "babel-node test/index.js | faucet",
-    "deploy": "babel ./lib/enum.js --out-file ./dist/index.js"
+    "check": "standard ./lib/enum.js | snazzy",
+    "test": "npm run check && node test/index.js | tap-spec",
+    "build": "babel ./lib/enum.js --out-file ./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
   },
   "devDependencies": {
     "babel": "^5.8.23",
-    "faucet": "0.0.1",
+    "snazzy": "^2.0.1",
+    "standard": "^5.4.1",
+    "tap-spec": "^4.1.1",
     "tape": "^4.2.0"
   }
 }

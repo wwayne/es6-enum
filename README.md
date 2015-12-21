@@ -1,19 +1,11 @@
 # es6-enum
 
 [![Version](http://img.shields.io/npm/v/es6-enum.svg)](https://www.npmjs.org/package/es6-enum)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![Circle CI](https://circleci.com/gh/wwayne/es6-enum/tree/master.svg?style=svg)](https://circleci.com/gh/wwayne/es6-enum/tree/master)
 
-### Why
-Well, every time I use `Redux` or implement `flux`, I was thinking if there have `enum` in Javascript. Yes they have, as **reserved word**.
-
-In `SWIFT`, enumerations is the first-class type, it has a lot of awesome features and very useful in developing.
-
-Since we now have `ES6`, so why not implementing an enum to help developing `Redux` or something else in JS.
-
-Becasue it:
-
-* Have specific scope because of using Symbol
-* More convenient to define CONSTANT or Actions in Redux 
-* Clear when reading your code
+### Support
+To use es6-enum, if you are not using babel, you should make sure your Nodejs >= 4.0.0
 
 ### Installation
 
