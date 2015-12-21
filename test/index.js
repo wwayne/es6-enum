@@ -1,5 +1,5 @@
 /**
- * Test env: node 4.2.1
+ * Test env: node 4.0.0
  */
 'use strict'
 
