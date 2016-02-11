@@ -2,7 +2,11 @@
 
 [![Version](http://img.shields.io/npm/v/es6-enum.svg)](https://www.npmjs.org/package/es6-enum)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![npm download][download-image]][download-url]
 [![Circle CI](https://circleci.com/gh/wwayne/es6-enum/tree/master.svg?style=svg)](https://circleci.com/gh/wwayne/es6-enum/tree/master)
+
+[download-image]: https://img.shields.io/npm/dm/es6-enum.svg?style=flat-square
+[download-url]: https://npmjs.org/package/es6-enum
 
 ### Installation
 
@@ -24,6 +28,26 @@ ORIENTATION.NORTH === ORIENTATION.NORTH       // true
 ORIENTATION.NORTH === ORIEN.NORTH             // false
  
 export ORIENTATION
+```
+
+### In practice
+I like use this package to define **constant** in **Redux**
+
+```
+constant.js
+  const APPLICATION = Enum('USER')
+
+action.js
+  dispatch({
+    type: APPLICATION.USER,
+    data
+  })
+  
+reducer.js
+  [APPLICATION.USER]: (state, action) => {
+    ...
+  }
+
 ```
 
 
