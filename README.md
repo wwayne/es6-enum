@@ -34,16 +34,16 @@ export ORIENTATION
 I like use this package to define **constant** in **Redux**
 
 ```javascript
---constant.js
+constant.js
   const APPLICATION = Enum('USER')
 
---action.js
+action.js
   dispatch({
     type: APPLICATION.USER,
     data
   })
   
---reducer.js
+reducer.js
   [APPLICATION.USER]: (state, action) => {
     ...
   }
