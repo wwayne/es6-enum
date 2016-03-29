@@ -1,6 +1,6 @@
 {
   "name": "es6-enum",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enum type made by es6",
   "main": "dist/index.js",
   "scripts": {

@@ -43,23 +43,9 @@ Enum.prototype = {
         break;
       case '[object Array]':
         result = [];
-        for (var _iterator = target.entries(), _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-          var _ref;
-
-          if (_isArray) {
-            if (_i >= _iterator.length) break;
-            _ref = _iterator[_i++];
-          } else {
-            _i = _iterator.next();
-            if (_i.done) break;
-            _ref = _i.value;
-          }
-
-          var key = _ref[0];
-          var value = _ref[1];
-
-          result[key] = getValue(value);
-        }
+        target.forEach(function (value, i) {
+          result[i] = getValue(value);
+        });
         break;
       default:
         result = null;
