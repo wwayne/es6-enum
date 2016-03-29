@@ -2,6 +2,8 @@
 
 exports.__esModule = true;
 var _bind = Function.prototype.bind;
+var Symbol = require('es6-symbol');
+
 function Enum() {
   var _this = this;
 
