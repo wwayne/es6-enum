@@ -7,8 +7,8 @@ const test = require('tape')
 const Enum = require('../dist')
 const whatEver = require('../dist')
 
-const ORIENTATION = Enum('NORTH', 'SOURTH', 'WEST', 'EAST');
-const ORIEN = Enum('NORTH', 'SOURTH', 'WEST', 'EAST');
+const ORIENTATION = Enum('NORTH', 'SOUTH', 'WEST', 'EAST');
+const ORIEN = Enum('NORTH', 'SOUTH', 'WEST', 'EAST');
 
 test('Enum can import as other name', function(t) {
   t.deepEqual(Enum, whatEver);

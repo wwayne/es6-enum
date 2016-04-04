@@ -19,14 +19,14 @@ npm install es6-enum
 ```javascript
 import Enum from "es6-enum"
 
-const ORIENTATION = Enum("NORTH", "SOURTH", "WEST", "EAST")
-const ORIEN = Enum("NORTH", "SOURTH", "WEST", "EAST")
+const ORIENTATION = Enum("NORTH", "SOUTH", "WEST", "EAST")
+const ORIEN = Enum("NORTH", "SOUTH", "WEST", "EAST")
 
 typeof ORIENTATION.NORTH                      // "symbol"
 
 ORIENTATION.NORTH === ORIENTATION.NORTH       // true
 ORIENTATION.NORTH === ORIEN.NORTH             // false
- 
+
 export ORIENTATION
 ```
 
@@ -42,7 +42,7 @@ action.js
     type: APPLICATION.USER,
     data
   })
-  
+
 reducer.js
   [APPLICATION.USER]: (state, action) => {
     ...
