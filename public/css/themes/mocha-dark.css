@@ -1,0 +1,13 @@
+#mocha {
+  background: #111;
+  color: #FFF;
+}
+
+#mocha-stats em {
+  color: #FFF;
+}
+
+#mocha-stats canvas {
+  background: #FFF;
+  border-radius: 50%;
+}

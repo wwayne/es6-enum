@@ -1,12 +1,27 @@
-'use strict';
+"use strict";
 
-function Enum() {
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var Enum = function Enum() {
   var _this = this;
 
-  if (!(this instanceof Enum)) return new (Function.prototype.bind.apply(Enum, [null].concat(Array.prototype.slice.call(arguments))))();
-  Array.from(arguments).forEach(function (arg) {
-    _this[arg] = Symbol(arg);
+  _classCallCheck(this, Enum);
+
+  for (
+    var _len = arguments.length, names = new Array(_len), _key = 0;
+    _key < _len;
+    _key++
+  ) {
+    names[_key] = arguments[_key];
+  }
+
+  names.forEach(function (name) {
+    _this[name] = Symbol(name);
   });
-}
+};
 
 module.exports = Enum;

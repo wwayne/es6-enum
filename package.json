@@ -1,13 +1,16 @@
 {
   "name": "es6-enum",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Enum type made by es6",
   "main": "dist/enum.js",
   "scripts": {
-    "check": "standard ./lib/enum.js | snazzy",
-    "test": "npm run build && npm run check && node test/index.js | tap-spec",
-    "prebuild": "rm -rf dist",
-    "build": "mkdir dist && babel lib --out-dir dist"
+    "babel": "babel ./src/index.js -o ./build/enum.js",
+    "check": "standard ./build/index.js | snazzy",
+    "pretest": "npm run build && npm run check",
+    "test": "npm run pretest && node test/index.js | tap-spec",
+    "prebuild": "rm -rf ./build && rm -rf ./dist",
+    "build": "mkdir ./build && npm run babel && webpack",
+    "bundle": "cp ./build/* ./dist/"
   },
   "repository": {
     "type": "git",
@@ -28,11 +31,21 @@
     "url": "https://github.com/wwayne/es6-enum/issues"
   },
   "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-preset-es2015": "^6.16.0",
-    "snazzy": "^2.0.1",
-    "standard": "^5.4.1",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.2.0"
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/register": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "prettier": "^2.0.5",
+    "prettier-webpack-plugin": "^1.2.0",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.4",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   }
 }
