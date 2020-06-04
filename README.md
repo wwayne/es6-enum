@@ -19,35 +19,34 @@ npm install es6-enum
 ```javascript
 import Enum from "es6-enum"
 
-const ORIENTATION = Enum("NORTH", "SOUTH", "WEST", "EAST")
-const ORIEN = Enum("NORTH", "SOUTH", "WEST", "EAST")
+const Orientation = new Enum("NORTH", "SOUTH", "WEST", "EAST")
+const Orien = new Enum("NORTH", "SOUTH", "WEST", "EAST")
 
-typeof ORIENTATION.NORTH                      // "symbol"
+typeof Orientation.NORTH                      // "symbol"
 
-ORIENTATION.NORTH === ORIENTATION.NORTH       // true
-ORIENTATION.NORTH === ORIEN.NORTH             // false
+Orientation.NORTH === Orientation.NORTH       // true
+Orientation.NORTH === Orien.NORTH             // false
 
 export ORIENTATION
 ```
 
 ### In practice
-I like use this package to define **constant** in **Redux**
+I like to use this package to define **constant** in **Redux**
 
 ```javascript
 constant.js
-  const APPLICATION = Enum('USER')
+  const Application = new Enum('USER')
 
 action.js
   dispatch({
-    type: APPLICATION.USER,
+    type: Application.USER,
     data
   })
 
 reducer.js
-  [APPLICATION.USER]: (state, action) => {
+  [Application.USER]: (state, action) => {
     ...
   }
-
 ```
 
 
